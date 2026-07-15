@@ -1,0 +1,237 @@
+:root {
+  --pink: #cc6670;
+  --pink-dot: #e2727c;
+  --blue: #a7bec6;
+  --ink: #2b2b2b;
+  --white: #ffffff;
+}
+
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  background: var(--white);
+  font-family: -apple-system, BlinkMacSystemFont, "Pretendard", "Noto Sans KR", sans-serif;
+  color: var(--ink);
+}
+
+.sheet {
+  max-width: 480px;
+  margin: 0 auto;
+  border: 1px solid #eee;
+}
+
+/* ---------- 1. 표지 : pink + dots ---------- */
+.hero {
+  position: relative;
+  background: linear-gradient(160deg, #d4737c 0%, var(--pink) 55%, #b85862 100%);
+  color: var(--white);
+  padding: 44px 32px 30px;
+  overflow: hidden;
+  min-height: 420px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.hero .dots span {
+  position: absolute;
+  border-radius: 50%;
+}
+
+.hero .dots span:nth-child(1) { width: 190px; height: 190px; top: -70px; right: -30px; background: var(--pink-dot); opacity: 0.9; }
+.hero .dots span:nth-child(2) { width: 90px; height: 90px; top: 60px; right: 130px; background: rgba(255,255,255,0.18); }
+.hero .dots span:nth-child(3) { width: 130px; height: 130px; top: 130px; right: -40px; background: var(--pink-dot); opacity: 0.55; }
+.hero .dots span:nth-child(4) { width: 46px; height: 46px; top: 10px; right: 210px; border: 1.5px solid rgba(255,255,255,0.5); background: transparent; }
+.hero .dots span:nth-child(5) { width: 60px; height: 60px; top: 210px; right: 90px; background: rgba(255,255,255,0.14); }
+
+.hero .top {
+  position: relative;
+  z-index: 1;
+}
+
+.eyebrow-pill {
+  display: inline-block;
+  font-size: 10.5px;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  padding: 6px 14px;
+  border: 1px solid rgba(255,255,255,0.55);
+  border-radius: 999px;
+  margin-bottom: 28px;
+}
+
+.wordmark {
+  font-size: 44px;
+  font-weight: 600;
+  letter-spacing: -0.02em;
+  margin: 0 0 14px;
+}
+
+.wordmark-rule {
+  width: 40px;
+  height: 4px;
+  border-radius: 2px;
+  background: var(--pink-dot);
+  margin: 0 0 16px;
+}
+
+.hero .caps {
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  opacity: 0.9;
+  margin: 0;
+}
+
+.icon-row {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  gap: 10px;
+  padding-top: 20px;
+  border-top: 1px solid rgba(255,255,255,0.25);
+}
+
+.icon-row span {
+  width: 34px;
+  height: 34px;
+  border-radius: 50%;
+  background: var(--white);
+  color: var(--pink);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 14px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.12);
+}
+
+/* ---------- shared section kicker ---------- */
+.kicker {
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  margin: 0 0 16px;
+}
+
+/* ---------- 2. 글 소개 : blue ---------- */
+.write {
+  position: relative;
+  background: var(--blue);
+  color: var(--white);
+  padding: 40px 28px;
+  text-align: center;
+}
+
+.write .kicker { opacity: 0.9; }
+
+.write .greet {
+  font-size: 15px;
+  font-weight: 400;
+  margin: 0 0 14px;
+  opacity: 0.95;
+}
+
+.write p.intro {
+  font-size: 15.5px;
+  line-height: 1.9;
+  font-weight: 300;
+  max-width: 340px;
+  margin: 0 auto;
+}
+
+/* ---------- 3. 기타 소개 : light pink, id/school/email ---------- */
+.etc {
+  background: #f3d9dc;
+  padding: 40px 28px;
+}
+
+.etc .kicker { color: #7a4a4f; }
+
+.etc-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.etc-list li {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+
+.etc-list .ico {
+  width: 34px;
+  height: 34px;
+  border-radius: 50%;
+  background: var(--white);
+  color: var(--pink);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 14px;
+  flex: none;
+}
+
+.etc-list .label {
+  display: block;
+  font-size: 10.5px;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: #7a4a4f;
+  margin-bottom: 2px;
+}
+
+.etc-list .value {
+  font-size: 14.5px;
+  font-weight: 700;
+  color: var(--ink);
+}
+
+.etc-list a {
+  color: var(--ink);
+  text-decoration: none;
+}
+
+.etc-list a:hover {
+  color: var(--pink);
+}
+
+/* ---------- 4. 관심 분야 : white + chips ---------- */
+.interests {
+  padding: 40px 28px 44px;
+  border-top: 1px solid #eee;
+}
+
+.interests .kicker { color: var(--pink); }
+
+.chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.chips .chip {
+  font-size: 14px;
+  font-weight: 600;
+  padding: 10px 18px;
+  border-radius: 999px;
+  border: 1.5px solid var(--pink);
+  color: var(--ink);
+}
+
+footer {
+  text-align: center;
+  font-size: 11px;
+  color: #999;
+  padding: 0 0 40px;
+}
+
+@media (max-width: 480px) {
+  .wordmark { font-size: 34px; }
+}
